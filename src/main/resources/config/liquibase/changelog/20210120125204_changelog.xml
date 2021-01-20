@@ -1,0 +1,213 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.9.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+    <changeSet author="mahbod (generated)" id="1611147128957-1">
+        <createSequence incrementBy="50" sequenceName="sequence_generator" startValue="1"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-2">
+        <createTable tableName="cart">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="cartPK"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP"/>
+            <column name="last_modified_date" type="TIMESTAMP"/>
+            <column name="price" type="BIGINT"/>
+            <column name="quantity" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-3">
+        <createTable tableName="cart_products">
+            <column name="cart_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="products_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-4">
+        <createTable tableName="jhi_authority">
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_authorityPK"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-5">
+        <createTable tableName="jhi_order">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_orderPK"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP"/>
+            <column name="last_modified_date" type="TIMESTAMP"/>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="latitude" type="VARCHAR(255)"/>
+            <column name="longitude" type="VARCHAR(255)"/>
+            <column name="postal_code" type="VARCHAR(255)"/>
+            <column name="tele_phone" type="VARCHAR(255)"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-6">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="TIMESTAMP"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-7">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-8">
+        <createTable tableName="jhi_user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="jhi_userPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP"/>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TIMESTAMP"/>
+            <column name="activated" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activation_key" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(254)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="image_url" type="VARCHAR(256)"/>
+            <column name="lang_key" type="VARCHAR(10)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_hash" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reset_date" type="TIMESTAMP"/>
+            <column name="reset_key" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-9">
+        <createTable tableName="jhi_user_authority">
+            <column name="user_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-10">
+        <createTable tableName="photo">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="photoPK"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP"/>
+            <column name="last_modified_date" type="TIMESTAMP"/>
+            <column name="height" type="INT"/>
+            <column name="image" type="BLOB"/>
+            <column name="image_content_type" type="VARCHAR(255)"/>
+            <column name="image_url" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="size" type="BIGINT"/>
+            <column name="weight" type="INT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-11">
+        <createTable tableName="product">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="productPK"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP"/>
+            <column name="last_modified_date" type="TIMESTAMP"/>
+            <column name="count" type="INT"/>
+            <column name="description" type="VARCHAR(2147483647)"/>
+            <column name="image_url" type="VARCHAR(255)"/>
+            <column name="price" type="BIGINT"/>
+            <column name="title" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-12">
+        <createTable tableName="product_photos">
+            <column name="product_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="photos_id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-13">
+        <createTable tableName="transaction">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="transactionPK"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP"/>
+            <column name="last_modified_date" type="TIMESTAMP"/>
+            <column name="bank_error" type="VARCHAR(255)"/>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="receipt_number" type="VARCHAR(255)"/>
+            <column name="stan" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="order_id" type="BIGINT"/>
+            <column name="user_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-14">
+        <addUniqueConstraint columnNames="email" constraintName="UC_JHI_USEREMAIL_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-15">
+        <addUniqueConstraint columnNames="login" constraintName="UC_JHI_USERLOGIN_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-16">
+        <addUniqueConstraint columnNames="order_id" constraintName="UC_TRANSACTIONORDER_ID_COL" tableName="transaction"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-17">
+        <addUniqueConstraint columnNames="products_id" constraintName="UK_3kg5kx19f8oy0lo76hdhc1uw1" tableName="cart_products"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-18">
+        <addUniqueConstraint columnNames="photos_id" constraintName="UK_td04sc7syf2to74jwchdbjmrx" tableName="product_photos"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-19">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-20">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-21">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-22">
+        <addForeignKeyConstraint baseColumnNames="order_id" baseTableName="transaction" constraintName="FK7a1t3jbydec24987geqfl0lm9" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_order" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-23">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="transaction" constraintName="FKb464vale9xiuhelqba92t6s7y" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-24">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_order" constraintName="FKe49f2u0r58qchuh5tqg0grj2y" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-25">
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="product_photos" constraintName="FKeurnts80qcflt0iv5lb68px7j" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-26">
+        <addForeignKeyConstraint baseColumnNames="products_id" baseTableName="cart_products" constraintName="FKhyhnx21758m3wmbi4ps96m0yw" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="product" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-27">
+        <addForeignKeyConstraint baseColumnNames="cart_id" baseTableName="cart_products" constraintName="FKnlhjc091rdu9k5c8u9xwp280w" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="cart" validate="true"/>
+    </changeSet>
+    <changeSet author="mahbod (generated)" id="1611147128957-28">
+        <addForeignKeyConstraint baseColumnNames="photos_id" baseTableName="product_photos" constraintName="FKpi8flrcteadt55obksiot35js" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="photo" validate="true"/>
+    </changeSet>
+</databaseChangeLog>

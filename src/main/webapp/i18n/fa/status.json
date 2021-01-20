@@ -1,0 +1,11 @@
+{
+  "coffeeApp": {
+    "Status": {
+      "null": "",
+      "SUCCESS": "SUCCESS",
+      "VERIFIED": "VERIFIED",
+      "FAILED": "FAILED",
+      "CREATED": "CREATED"
+    }
+  }
+}

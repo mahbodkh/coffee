@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "ir.coffee.app",
+      "nativeLanguage": "fa"
+    },
+    "jhipsterVersion": "6.10.5",
+    "applicationType": "monolith",
+    "baseName": "coffee",
+    "packageName": "ir.coffee.app",
+    "packageFolder": "ir/coffee/app",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjRhNjU5YmUyM2QyZDE1M2U0NzU5ZjczOTAzZTczZWIyZmE0MDFkMmY3OGQ5OWQwNGZlZDliN2ZiNWQwMWMzN2JiYzQxNTQ1NDJlNTgxNmY0YmY4YzJlMGE0ODhjOTI1YzNkNTY1N2U0Y2Y1ZmU3ZmNmZmM5NDcxNDczZWMwODQ=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "clientFramework": "react",
+    "clientTheme": "minty",
+    "clientThemeVariant": "primary",
+    "creationTimestamp": 1611134505372,
+    "testFrameworks": ["gatling"],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "fa",
+    "languages": ["fa"],
+    "blueprints": []
+  }
+}

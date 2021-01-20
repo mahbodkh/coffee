@@ -1,0 +1,61 @@
+
+
+entity Product {
+	price Long,
+    title String,
+    description TextBlob,
+    imageUrl String,
+    count Integer,
+}
+
+entity Photo {
+    image ImageBlob,
+    imageUrl String,
+    name String,
+    height Integer,
+    weight Integer,
+    size Long,
+}
+
+entity Order {
+    address String,
+    postalCode String,
+    telePhone String,
+    longitude String,
+    latitude String,
+}
+
+entity Transaction {
+    status Status,
+    bankError String,
+    receiptNumber String,
+    description String,
+    stan String,
+}
+
+entity Cart {
+    quantity Integer,
+    price Long,
+}
+
+
+
+enum Status {
+    SUCCESS, VERIFIED, FAILED, CREATED
+}
+
+
+// Set pagination options
+paginate Product with pagination
+
+relationship OneToMany {
+    Product to Photo{photos}
+}
+
+relationship OneToMany {
+    Cart to Product{carts}
+}
+
+relationship OneToOne {
+    Transaction{order} to Order
+}
